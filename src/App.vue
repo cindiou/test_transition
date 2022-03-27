@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <Counter :level="1"></Counter>
+    <h1>添加了新的内容</h1>
     <input type="number" v-model="count" step="10" />
     <p>数字：{{ dealNumber }}</p>
     <button @click="show = !show">切换</button>
@@ -14,9 +16,12 @@
 
 <script>
 import gsap from "gsap";
+import Counter from "./Counter.vue";
 export default {
   name: "App",
-  components: {},
+  components: {
+    Counter,
+  },
   data() {
     return {
       show: false,
