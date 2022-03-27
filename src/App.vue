@@ -11,23 +11,44 @@
     >
       <h1 v-if="show">Hello,World</h1>
     </transition>
+    <hr />
+    <button @click="showText = !showText">switch</button>
+    <p
+      v-if="showText"
+      :style="{
+        color: 'red',
+      }"
+    >
+      Hello,World!
+    </p>
+    <p v-else>哈喽，世界!</p>
+    <hr />
+    <test-hook @hook:updated="handleUpdate"></test-hook>
   </div>
 </template>
 
 <script>
 import gsap from "gsap";
 import Counter from "./Counter.vue";
+import TestHook from "./TestHook.vue";
 export default {
   name: "App",
   components: {
     Counter,
+    TestHook,
   },
   data() {
     return {
       show: false,
       count: 0,
       showNumber: 0,
+      showText: true,
     };
+  },
+  methods: {
+    handleUpdate() {
+      alert("I had updated");
+    },
   },
   computed: {
     dealNumber() {
