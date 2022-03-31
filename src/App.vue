@@ -24,6 +24,8 @@
     <p v-else>哈喽，世界!</p>
     <hr />
     <test-hook @hook:updated="handleUpdate"></test-hook>
+    <hr/>
+    <h1>test github.dev</h1>
   </div>
 </template>
 
